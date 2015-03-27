@@ -106,7 +106,7 @@ class Storage(BaseStorage):
 
         file_key = self.storage.get_key(path)
 
-        if not file_key or self.is_expired(path):
+        if not file_key or self.is_expired(file_key):
             return None
 
         return loads(file_key.read())
